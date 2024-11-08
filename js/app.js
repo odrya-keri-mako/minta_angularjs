@@ -29,7 +29,25 @@
       
       $urlRouterProvider.otherwise('/');
     }
-  ]);
+  ])
 
+  // Custom navigation
+  .directive('customNavbar', [ 
+    () => {
+
+      return {
+				restrict: 'EA',
+				replace: true,
+				scope: {},
+				template:`<div class="row mt-5 justify-content-center">
+                    <ul class="list-group w-auto">
+                      <li class="list-group-item"><a ui-sref="home">Home</a></li>
+                      <li class="list-group-item"><a ui-sref="page1">Page1</a></li>
+                      <li class="list-group-item"><a ui-sref="page2">Page2</a></li>
+                    </ul>
+                  </div>`
+			};
+		}
+	])
 
 })(window, angular);
